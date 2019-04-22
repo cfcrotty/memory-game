@@ -11,7 +11,10 @@ class App extends Component {
   state = {
     friends,
     score: 0,
-    topScore: 0
+    topScore: 0,
+    middleNav: "Click an image to begin!",
+    classShake: "",
+    classMiddle: ""
   };
 
   componentDidMount() {
@@ -38,24 +41,30 @@ class App extends Component {
   }
 
   clickedFriend = id => {
+    var incorrect = false;
     // Filter this.state.friends for friends with an id not equal to the id being removed
     const friends1 = this.state.friends.map(friend => {
       if (friend.id === id) {
         if (friend.clicked) {
+          incorrect = true;
           if (this.state.score>this.state.topScore) {
             this.setState({ topScore: this.state.score });
           }
           const friends2 = this.state.friends.map(frnd => {
             frnd.clicked = false;
           });
-          this.setState({ friends: friends2, score: 0 });
+          this.setState({ friends: friends2, score: 0, middleNav: "You guessed incorrectly!", classMiddle: "incorrect" });
         } else {
+          incorrect = false;
           friend.clicked = true;
-          this.setState({ score: this.state.score+1 });
+          this.setState({ score: this.state.score+1, middleNav: "You guessed correctly!", classMiddle: "correct" });
         }
       }
       return friend;
     });
+    if (incorrect) this.setState({ classShake: " shake", classMiddle: "incorrect" });
+    else this.setState({ classShake: "", classMiddle: "correct" });
+    this.setState({classMiddle: "" });
     let newFriends=this.shuffle(friends1);
     this.setState({ friends: newFriends });
   };
@@ -64,7 +73,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Nav scores={`Score: ${this.state.score} | Top Score: ${this.state.topScore}`} brand="Clicky Game" middle="Click an image to begin!"></Nav>
+        <Nav scores={`Score: ${this.state.score} | Top Score: ${this.state.topScore}`} brand="Clicky Game" middle={this.state.middleNav} classMiddle={this.state.classMiddle}></Nav>
         <Header h1="Clicky Game!" h2="Click on an image to earn points, but don't click on any more than once!"></Header>
         <main className="container">
           {
@@ -75,6 +84,7 @@ class App extends Component {
               key={friend.id}
               name={friend.name}
               image={friend.image}
+              classShake={this.state.classShake}
             />
           ))}
         </main>

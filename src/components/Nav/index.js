@@ -4,7 +4,7 @@ function Nav(props) {
   return <nav className="navbar">
   <ul>
     <li className="brand"><a href="/">{props.brand}</a></li>
-    <li className="">{props.middle}</li>
+    <li className={props.classMiddle}>{props.middle}</li>
     <li>{props.scores}</li>
   </ul>
 </nav>;
