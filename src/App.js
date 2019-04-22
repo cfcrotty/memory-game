@@ -64,7 +64,9 @@ class App extends Component {
     });
     if (incorrect) this.setState({ classShake: " shake", classMiddle: "incorrect" });
     else this.setState({ classShake: "", classMiddle: "correct" });
-    this.setState({classMiddle: "" });
+    setTimeout(()=>{
+      this.setState({classMiddle: "" });
+    },400)
     let newFriends=this.shuffle(friends1);
     this.setState({ friends: newFriends });
   };
