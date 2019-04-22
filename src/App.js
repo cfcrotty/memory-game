@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import friends from "./friends.json";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
   state = {
     friends,
     score: 0,
