@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "evilmorty",
+    "image": "assets/images/evilmorty.png",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "name": "mr",
+    "image": "assets/images/mr.png",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "name": "jessica",
+    "image": "assets/images/jessica.png",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "name": "meeseeks",
+    "image": "assets/images/meeseeks.png",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "name": "beth",
+    "image": "assets/images/beth.png",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "name": "goldenford",
+    "image": "assets/images/goldenford.png",
+    "clicked": false
+  },
+  {
+    "id": 7,
+    "name": "gianthead",
+    "image": "assets/images/gianthead.png",
+    "clicked": false
+  },
+  {
+    "id": 8,
+    "name": "jerry",
+    "image": "assets/images/jerry.png",
+    "clicked": false
+  },
+  {
+    "id": 9,
+    "name": "rick",
+    "image": "assets/images/rick.png",
+    "clicked": false
+  },
+  {
+    "id": 10,
+    "name": "birdperson",
+    "image": "assets/images/birdperson.png",
+    "clicked": false
+  },
+  {
+    "id": 11,
+    "name": "summer",
+    "image": "assets/images/summer.png",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "name": "morty",
+    "image": "assets/images/morty.png",
+    "clicked": false
+  }
+]

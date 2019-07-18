@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import friends from "./friends.json";
+import API from "./utils/API";
 
 class App extends Component {
   state = {
@@ -19,6 +20,11 @@ class App extends Component {
   componentDidMount() {
     let newFriends = this.shuffle(friends);
     this.setState({ friends: newFriends });
+    API.getBooks()
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => console.log(err));
   }
 
   shuffle = array => {
